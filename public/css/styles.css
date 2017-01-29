@@ -108,8 +108,18 @@
   border: 2px #666666 solid;
   width: 500px;
   height: 600px;
-
-  /*float: left;*/
+}
+#playlist_box h3{
+  padding-left: 10px;
+}
+#file-link{
+  font-weight: normal;
+  text-decoration: none;
+}
+#file-link:hover{
+  text-decoration: underline;
+  color: #666666;
+  cursor: pointer;
 }
 /*#bottom_body p{
   padding: 0px;

@@ -37,7 +37,7 @@
 
       </a>
 
-      <a class="section" id="section2" onclick="sectionClicked()">
+      <a class="section" id="section2">
         asdfdsa
       </a>
 
@@ -52,14 +52,15 @@
     </div>
   </div>
 
-
+  <div class="clear_float"></div>
 
   <div id="bottom_body_container">
     <div id="bottom_body">
       <div id="bottom_body_border">
         <br>
         <div id="playlist_box">
-          <h3>Playlist Files</h3>
+          <div id="clear_float"></div>
+          <p><h3>Playlist File: <a id="file-link"href"">sample file</a></h3></p>
 
         </div>
       </div>
@@ -67,18 +68,11 @@
   </div>
 
 
-
+  <hr>
   <p class="right">Text aligned to the RIGHT the BODY TAG</p>
   <div>
     <input type="button" value="Root Directory" onclick="dirDialog.click()"/>
   </div>
-
-  <!-- <select id="playlist" size="5">
-    <<option value="text1">adsfdsf</option>
-    <<option value="text2"></option>
-    <<option value="text3"></option>
-    <<option value="text4"></option>
-  </select> -->
 
 
   <input id="dirDialog" style="display:none;" type="file" nwdirectory/>
@@ -87,26 +81,6 @@
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/libs/jquery-3.1.1.min.js"></script>
   <script src="/js/index.js"></script>
-
-
-  <script>
-    function chooseFile(name) {
-      var chooser = $(name);
-      chooser.unbind('change');
-      chooser.change(function(evt) {
-        console.log($(this).val());
-      });
-
-      chooser.trigger('click');
-    }
-    chooseFile('#fileDialog');
-</script>
-<script>
-  function sectionClicked(){
-    console.log('Section Clicked: ', this);
-
-  }
-</script>
-
+  <script src="/js/libs/delivery.js"></script>
 </body>
 </html>

@@ -1,23 +1,70 @@
 var socket = io();
 
 socket.on('connect', function(){
-  console.log(socket.id);
-});
+    var delivery = new Delivery(socket);
+
+    delivery.on('delivery.connect',function(delivery){
+      $("#fileDialog").on('click', function(evt){
+        // chooseFile('#fileDialog');
+
+        var chooser = $('#fileDialog');
+        chooser.unbind('change');
+        chooser.change(function(evt) {
+          // console.log($(this).val());
+          // console.log('FILE PATH: ', evt.target.files);
+          var files = $('#fileDialog')[0].files;
+          var file = files[0];
+          console.log(files[0].name);
+          $('#file-link').text(files[0].name);
+          $('#file-link').href = files[0].path;
+          console.log(files[0]);
+          console.log('CHOSEN FILE: ', file);
+          var extraParams = {sender: socket.id};
+          delivery.send(file, extraParams);
+          evt.preventDefault();
+        });
+      });
+    });
+
+    delivery.on('send.success',function(fileUID){
+      console.log("file was successfully sent.");
+    });
+  });
+
+
+// function chooseFile(name) {
+//   var chooser = $(name);
+//   chooser.unbind('change');
+//   chooser.change(function(evt) {
+//     // console.log($(this).val());
+//     // console.log('FILE PATH: ', evt.target.files);
+//     var files = $('#fileDialog')[0].files;
+//     var file = files[0];
+//     console.log(files[0].name);
+//     $('#file-link').text(files[0].name);
+//     $('#file-link').href = files[0].path;
+//     console.log(files[0]);
+//     return file;
+//
+//     // socket.emit('file-entered', evt.target.files[0], function(){
+//     //   // console.log('File submitted to the server', evt.target.files[0]);
+//     // });
+//   });
+// }
+
+
+
+
 
 
 jQuery('.section').on('click', function(e){
   var sectionid = e.currentTarget.id;
-  console.log('\n\nID is: ', e.currentTarget.id);
   resetSections();
   if($('#bottom_body_container').css("visibility")=="collapse"){
     if($(e.currentTarget).css("margin-top")=="0px") {
-      // console.log('Bottom plane was collapsed, should expand');
       var color = $(e.currentTarget).css("background-color");
-      console.log('\nCOLOR: ', color);
-
       $('#bottom_body_container').css("visibility", "visible").show();
       $('#bottom_body').css("background-color", color).show();
-
       $(e.currentTarget).removeClass("section");
       $(e.currentTarget).addClass("highlighted-section");
     }
@@ -25,7 +72,6 @@ jQuery('.section').on('click', function(e){
   else{
     $(e.currentTarget).removeClass("highlighted-section");
     $(e.currentTarget).addClass("section");
-    console.log('asdfhadskjfgadskgfkdsa');
     $('#bottom_body_container').css("visibility", "collapse");
   }
 
@@ -33,19 +79,14 @@ jQuery('.section').on('click', function(e){
 
 jQuery('.section').hover(function(e){
   var sectionid = e.currentTarget;
-  console.log(sectionid);
-
   if($('#bottom_body_container').css("visibility")!="collapse" &&
   sectionid.id !="section4"){
-
     $(e.currentTarget).addClass("section-spacing");
   }
+
   if(sectionid.id=="section4"){
     $('#section4').css("margin-left", "5px");
-  }else{
-    // $('#section4').css("margin-left","5px");
   }
-
 }, function(e){
   resetSpacing();
   $('#section4').css("margin-left","5.7px");
@@ -55,15 +96,10 @@ jQuery('body').on('mouseover', function(){
   var width = $('#body_width').width();
   width = width - 14;
   var strwidth = "" + width + "px";
-  console.log('\n\n\nWIDTH IS :', strwidth);
   $('#bottom_body').css("width", strwidth);
   width = 1037 - width;
-  console.log('\n\n\nWIDTH IS :', width);
-
-
   $('#bottom_body').css("border-right-width", width);
-
-})
+});
 
 var resetSections = function(){
   console.log('RESETTING ALL SECTIONS');
