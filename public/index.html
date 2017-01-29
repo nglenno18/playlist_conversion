@@ -15,47 +15,53 @@
   <hr>
 
   <div id="main_body">
-    <a class="section" id="section1">
-      <h2 id="section-header" align="center"><img id="section-image" src="images/browse-folder.png"/><br>Browse Files</h2>
-      <div>
-        <p id="section-summary" align="center">Browse for exported playlist files. Acceptable playlist files are with the extensions:
-          <span id=section-summary-link onclick="window.open('example-files/example.txt'); return false">
-            .m3u, .m3u8
-          </span>
-          <span id="section-summary-link" onclick="window.open('example-files/acoustics.txt');">, .txt </span>
-        </p>
-        <p id="section-summary"align="center">
-          <span><br><em>
-            The songs included in the
-            playlist must be on your computer or in attached external memory</em>
-          </span>
-        </p>
-        <p><input id="fileDialog" type="file" accept=".m3u, .m3u8, .txt" nwworkingdir="C:\"/></p>
+    <div id="body_width">
+      <a class="section" id="section1">
+        <h2 id="section-header" align="center"><img id="section-image" src="images/browse-folder.png"/><br>Browse Files</h2>
+        <div>
+          <p id="section-summary" align="center">Browse for exported playlist files. Acceptable playlist files are with the extensions:
+            <span id=section-summary-link onclick="window.open('example-files/example.txt'); return false">
+              .m3u, .m3u8
+            </span>
+            <span id="section-summary-link" onclick="window.open('example-files/acoustics.txt');">, .txt </span>
+          </p>
+          <p id="section-summary"align="center">
+            <span><br><em>
+              The songs included in the
+              playlist must be on your computer or in attached external memory</em>
+            </span>
+          </p>
+          <p><input id="fileDialog" type="file" accept=".m3u, .m3u8, .txt" nwworkingdir="C:\"/></p>
 
-      </div>
+        </div>
 
-    </a>
+      </a>
 
-    <div class="section" id="section2" onclick="sectionClicked()">
-      asdfdsa
-    </div>
+      <a class="section" id="section2" onclick="sectionClicked()">
+        asdfdsa
+      </a>
 
 
-    <div class="section" id="section3">
-      asdfdsa
-    </div>
+      <a class="section" id="section3">
+        asdfdsa
+      </a>
 
-    <div class="section" id="section4">
-      asdfdsa
+      <a class="section" id="section4">
+        asdfdsa
+      </a>
     </div>
   </div>
 
+
+
   <div id="bottom_body_container">
-
     <div id="bottom_body">
-
       <div id="bottom_body_border">
-        <p><input id="fileDialog" type="file" accept=".m3u, .m3u8, .txt" nwworkingdir="C:\"/></p>
+        <br>
+        <div id="playlist_box">
+          <h3>Playlist Files</h3>
+
+        </div>
       </div>
     </div>
   </div>
