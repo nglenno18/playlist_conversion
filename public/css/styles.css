@@ -1,0 +1,132 @@
+.clear-float{
+  clear:both;
+}
+.underlined{
+  text-decoration: underline;
+}
+
+#section-image{
+  width: 40%;
+  margin: 0 auto;
+  padding: 0px;
+}
+#section-header{
+  color:black;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 5%;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
+#section-summary{
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 15px;
+  font-weight:normal;
+}
+#section-summary-link{
+  text-decoration: none;
+  font-weight: bold;
+  color: #378;
+}
+#section-summary-link:hover{
+  text-decoration:none;
+  color:#666666;
+  cursor: help;
+}
+.section:hover{
+  border: 3px #CCCCCC solid;
+  /*border-bottom: 0px;*/
+  height: 99%;
+  width: 24%;
+  /*width: 28%;*/
+  float:left;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+.visited{
+  border: 3px #CCCCCC solid;
+  height: 99% !important;
+  width: 24%;
+  /*width: 28%;*/
+  float:left;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+.page-container{
+  background-color: #378;
+}
+.bluecolor{
+  background-color: #378;
+  color: #378;
+}
+#main_body{
+  width: 1050px;
+  margin: 0 auto;
+  border: 2px #CCCCCC solid;
+  background-color: #378;
+  height: 400px;
+  border-radius: 1%;
+}
+#bottom_body_container{
+  border: 2px solid #CCCCCC;
+  border-top: 0px;
+  width: 1050px;
+  margin: 0 auto;
+  position: relative;
+  top: -5px;
+  visibility: collapse;
+}
+#bottom_body{
+  border: 14px #378 solid;
+  /*background-color: #eeeeee;*/
+  border-top: none;
+  padding-top: 0px;
+  visibility: inherit;
+}
+#bottom_body_border{
+  border: 2px #CCCCCC solid;
+  border-top: 0px;
+  width: 100%;
+  height: 100%
+  margin: 0 auto;
+}
+#bottom_body p{
+  padding: 0px;
+  margin-top:0px;
+}
+.section{
+  width: 24%;
+  height:92%;
+  float:left;
+  margin-left: 5px;
+  margin-top:12px;
+}
+.highlighted-section{
+  border: 3px #CCCCCC solid;
+  border-bottom: 0px;
+  height: 99%;
+  width: 24%;
+  /*width: 28%;*/
+  float:left;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+#section1{
+  background-color: #eeeeee;
+  margin-left: 12px;
+}
+#section2{
+  /*background-color: #b9a38b;*/
+  background-color: #958470;/*sand*/
+  /*background-color: #666666;*//*lightest grey*/
+}
+#section3{
+  background-color: #333;
+
+}
+#section4{
+  /*background-color: #a97;*/
+  /*background-color: #378;*/
+  background-color: #666666;
+}

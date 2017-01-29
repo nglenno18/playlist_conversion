@@ -5,38 +5,83 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<style type="text/css">
-    .clear-float{
-      clear:both;
-    }
-    a{
-      text-decoration: none;
-    }
-    a:hover{
-      text-decoration: underline;
-    }
-    a:visited{
-      color:green;
-    }
-
-	</style>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
 <body>
-  <h2>STYLING LINKS</h2>
+  <a id="example-link"target="_tab"href="example-files/example.txt"></a>
+  <a id="example-link2" target="_blank" href="example-files/acoustics.txt"></a>
 
+  <h2>Convert Playlists</h2>
   <hr>
-  <p class="right">Text aligned to the RIGHT the BODY TAG</p>
-  <div>
-    <a href="file:///C:/etc">Browse Files</a>
+
+  <div id="main_body">
+    <a class="section" id="section1">
+      <h2 id="section-header" align="center"><img id="section-image" src="images/browse-folder.png"/><br>Browse Files</h2>
+      <div>
+        <p id="section-summary" align="center">Browse for exported playlist files. Acceptable playlist files are with the extensions:
+          <span id=section-summary-link onclick="window.open('example-files/example.txt'); return false">
+            .m3u, .m3u8
+          </span>
+          <span id="section-summary-link" onclick="window.open('example-files/acoustics.txt');">, .txt </span>
+        </p>
+        <p id="section-summary"align="center">
+          <span><br><em>
+            The songs included in the
+            playlist must be on your computer or in attached external memory</em>
+          </span>
+        </p>
+        <p><input id="fileDialog" type="file" accept=".m3u, .m3u8, .txt" nwworkingdir="C:\"/></p>
+
+      </div>
+
+    </a>
+
+    <div class="section" id="section2" onclick="sectionClicked()">
+      asdfdsa
+    </div>
+
+
+    <div class="section" id="section3">
+      asdfdsa
+    </div>
+
+    <div class="section" id="section4">
+      asdfdsa
+    </div>
   </div>
 
-  <input type="file" webkitdirectory nwworkingdir="C:/Users/"/>
+  <div id="bottom_body_container">
+
+    <div id="bottom_body">
+
+      <div id="bottom_body_border">
+        <p><input id="fileDialog" type="file" accept=".m3u, .m3u8, .txt" nwworkingdir="C:\"/></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <p class="right">Text aligned to the RIGHT the BODY TAG</p>
+  <div>
+    <input type="button" value="Root Directory" onclick="dirDialog.click()"/>
+  </div>
+
+  <!-- <select id="playlist" size="5">
+    <<option value="text1">adsfdsf</option>
+    <<option value="text2"></option>
+    <<option value="text3"></option>
+    <<option value="text4"></option>
+  </select> -->
+
+
+  <input id="dirDialog" style="display:none;" type="file" nwdirectory/>
 
   <p><input id="fileDialog" type="file" accept=".m3u, .m3u8, .txt" nwworkingdir="C:\"/></p>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/index.js"></script>
   <script src="/js/libs/jquery-3.1.1.min.js"></script>
+  <script src="/js/index.js"></script>
+
 
   <script>
     function chooseFile(name) {
@@ -49,6 +94,12 @@
       chooser.trigger('click');
     }
     chooseFile('#fileDialog');
+</script>
+<script>
+  function sectionClicked(){
+    console.log('Section Clicked: ', this);
+
+  }
 </script>
 
 </body>
