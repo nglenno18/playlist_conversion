@@ -24,7 +24,9 @@ io.on('connection', (socket)=>{
       if(err) {
         console.log('\nFIAL: \tFile COULD NOT be saved');
       }else{
-        console.log('\nSUCCESS: \tFile SAVED');
+        var string = decypher(file);
+        console.log('\nSUCCESS: \tFile SAVED\n', string);
+        socket.emit('tracklist', string);
       }
     });
   })
@@ -34,6 +36,23 @@ io.on('connection', (socket)=>{
   // });
 });
 
+var decypher = function(file){
+  console.log('\n\n\ndecypher method called');
+  console.log(file.name);
+  var string = "";
+  var fileString = fs.readFileSync(file.name).toString();
+  // console.log(fileString);
+  // var rs = fs.createReadStream(file.name);
+  // rs.setEncoding('utf8');
+  // rs.on('readable', ()=>{
+  //   string = rs.read();
+  //   console.log('\nreadable', string);
+  // });
+  // rs.on('end', ()=>{
+  //   console.log('\nend read');
+  // });
+  return fileString;
+}
 
 
 

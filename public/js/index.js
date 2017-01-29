@@ -27,35 +27,14 @@ socket.on('connect', function(){
     });
 
     delivery.on('send.success',function(fileUID){
-      console.log("file was successfully sent.");
+      console.log("file was successfully sent.", fileUID);
     });
   });
 
-
-// function chooseFile(name) {
-//   var chooser = $(name);
-//   chooser.unbind('change');
-//   chooser.change(function(evt) {
-//     // console.log($(this).val());
-//     // console.log('FILE PATH: ', evt.target.files);
-//     var files = $('#fileDialog')[0].files;
-//     var file = files[0];
-//     console.log(files[0].name);
-//     $('#file-link').text(files[0].name);
-//     $('#file-link').href = files[0].path;
-//     console.log(files[0]);
-//     return file;
-//
-//     // socket.emit('file-entered', evt.target.files[0], function(){
-//     //   // console.log('File submitted to the server', evt.target.files[0]);
-//     // });
-//   });
-// }
-
-
-
-
-
+socket.on('tracklist', function(e){
+  // console.log('Tracklist recieved: ', e);
+  jQuery('#tracklist').text(e);
+});
 
 jQuery('.section').on('click', function(e){
   var sectionid = e.currentTarget.id;
@@ -77,13 +56,13 @@ jQuery('.section').on('click', function(e){
 
 });
 
+
 jQuery('.section').hover(function(e){
   var sectionid = e.currentTarget;
   if($('#bottom_body_container').css("visibility")!="collapse" &&
   sectionid.id !="section4"){
     $(e.currentTarget).addClass("section-spacing");
   }
-
   if(sectionid.id=="section4"){
     $('#section4').css("margin-left", "5px");
   }
