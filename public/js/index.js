@@ -53,12 +53,13 @@ jQuery('.section').hover(function(e){
 
 jQuery('body').on('mouseover', function(){
   var width = $('#body_width').width();
-  width = width - 19;
+  width = width - 14;
   var strwidth = "" + width + "px";
   console.log('\n\n\nWIDTH IS :', strwidth);
   $('#bottom_body').css("width", strwidth);
   width = 1037 - width;
   console.log('\n\n\nWIDTH IS :', width);
+
 
   $('#bottom_body').css("border-right-width", width);
 
