@@ -29,11 +29,7 @@ io.on('connection', (socket)=>{
         socket.emit('tracklist', string);
       }
     });
-  })
-  // socket.on('file-entered', function(params, callback){
-  //   console.log('Server recieved a file from the client', params);
-  //   callback();
-  // });
+  });
 });
 
 var decypher = function(file){
